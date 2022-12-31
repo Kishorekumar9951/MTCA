@@ -1,0 +1,17 @@
+import sqlite3 as lite
+con =lite.connect('pythonpractice.27.db')
+cur =con.cursor()
+cur.execute("DROP TABLE IF EXISTS Cars")
+cur.execute('''CREATE TABLE Cars(
+        ID INT, NAME TEXT, PRICE INT)''')
+print("table Cars create. ")
+cur.execute("INSERT INTO Cars VALUES(1,'AUDI',54685541)")
+cur.execute("INSERT INTO Cars VALUES(2,'FERRARI',541)")
+cur.execute("INSERT INTO Cars VALUES(3,'BENZ',54685)")
+cur.execute("INSERT INTO Cars VALUES(4,'VOLVO',5541)")
+cur.execute("INSERT INTO Cars VALUES(5,'SHODA',6855)")
+cur.execute("INSERT INTO Cars VALUES(6,'NANO',46554)")
+cur.execute("INSERT INTO Cars VALUES(7,'MARUTI',58551)")
+cur.execute("INSERT INTO Cars VALUES(8,'SWIFT',46854)")
+con.commit()
+print("values in the table are inserted.")
